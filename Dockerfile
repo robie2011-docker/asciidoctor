@@ -19,8 +19,11 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg |  apt-key add - && \
     useradd debian -m
 
 USER debian
+
+# no-sandbox: https://github.com/mermaidjs/mermaid.cli/pull/32
 RUN cd ~/ && \
     yarn add mermaid.cli@$MERMAIDCLI_VERSION &&\
+    sed -i "62i puppeteerConfig.args = ['--no-sandbox'];\r\n" node_modules/mermaid.cli/index.bundle.js &&\
     export PATH=$PATH:~/node_modules/.bin
 
 #docker exec -it -u debian cc98d34f0835 bash
