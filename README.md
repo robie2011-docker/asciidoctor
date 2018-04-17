@@ -11,6 +11,6 @@ this image is intented to be used in CI enviroment for generating HTML/PDF docum
 
 ## Example
 Generate Html from `test.doc`, which is located in current working directory.
-```
-   docker run --rm -it -v$(pwd):/data robie2011/asciidoctor /bin/bash -c "cd /data && asciidoctor -bhtml5 test.adoc"
+```bash
+docker run -w /data --rm -it -v$(pwd):/data robie2011/asciidoctor asciidoctor -bhtml5 test.adoc
 ```
