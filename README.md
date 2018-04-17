@@ -7,4 +7,10 @@ this image is intented to be used in CI enviroment for generating HTML/PDF docum
 * Asciidoctor-Pdf
 * Asciidoctor Diagram
     * mermaid.cli
+    
 
+## Example
+Generate Html from `test.doc`, which is located in current working directory.
+```
+   docker run --rm -it -v$(pwd):/data robie2011/asciidoctor /bin/bash -c "cd /data && asciidoctor -bhtml5 test.adoc"
+```
