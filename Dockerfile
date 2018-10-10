@@ -40,5 +40,3 @@ RUN cd ~/ && \
      sed -i "62i puppeteerConfig.args = ['--no-sandbox'];\r\n" ~/node_modules/mermaid.cli/index.bundle.js &&\
      export PATH=$PATH:~/node_modules/.bin
 
-#docker exec -it -u debian cc98d34f0835 bash
-# node_modules/.bin/mmdc -i flowchart.mmd
