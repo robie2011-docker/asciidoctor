@@ -22,3 +22,9 @@ docker run -w /data --rm -it -v$(pwd):/data robie2011/asciidoctor asciidoctor -b
 ```bash
 docker run -w /data --rm -it -v$(pwd):/data robie2011/asciidoctor asciidoctor -v -r asciidoctor-diagram -a data-uri -b xhtml5 index.adoc
 ```
+
+### Using build script
+```bash
+# note: make sure sample_build.sh can be found in /data folder
+docker run -w /data --rm -it -v$(pwd):/data robie2011/asciidoctor bash sample_build.sh
+```
