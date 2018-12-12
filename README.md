@@ -5,6 +5,7 @@ this image is intented to be used in CI enviroment for generating HTML/PDF docum
 * Node, YARN
 * Asciidoctor
 * Asciidoctor-Pdf
+* Code Highlighter: pygments.rb
 * Asciidoctor Diagram
     * mermaid.cli
     
