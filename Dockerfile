@@ -18,6 +18,8 @@ ENV ASCIIDOCTOR_PDF_VERSION 1.5.0.alpha.16
 # https://rubygems.org/gems/pygments.rb
 ENV PYGMENTS_VERSION 1.2.1
 
+ENV CONCURRENT_RUBY 1.1.4
+
 #WARNING: The following packages cannot be authenticated!
 #  libcurl3-gnutls
 RUN apt-get -qq update && apt-get -qq install curl apt-transport-https --force-yes && \
@@ -28,6 +30,7 @@ RUN apt-get -qq update && apt-get -qq install asciidoctor=$ASCIIDOCTOR_VERSION &
     gem install asciidoctor-diagram:$ASCIIDOCTOR_DIAGRAM_VERSION && \
     gem install asciidoctor-pdf:$ASCIIDOCTOR_PDF_VERSION && \
     gem install pygments.rb:$PYGMENTS_VERSION && \
+    gem install concurrent-ruby:$CONCURRENT_RUBY && \
     useradd debian -m
     
 RUN apt-get -qq update && \     
@@ -48,6 +51,7 @@ RUN  cd ~/ && export NVM_DIR="$HOME/.nvm" &&  [ -s "$NVM_DIR/nvm.sh" ] && \. "$N
      echo export PATH=$PATH:/home/debian/node_modules/.bin >>/home/debian/.bashrc
 
 # dev testing example:
-# docker run --rm -it -v/~/repos/2017_paasos/project-doc:/data -w/data/paasos-symmetricds tmp
+# docker build . -t tmp
+# docker run --rm -it -v/Users/robert.rajakone/repos/2017_paasos/project-doc:/data -w/data/paasos-symmetricds tmp
 # asciidoctor -v -r asciidoctor-diagram -a data-uri -b xhtml5 index.adoc
 # mermaid command: mmdc 

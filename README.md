@@ -29,3 +29,7 @@ docker run -w /data --rm -it -v$(pwd):/data robie2011/asciidoctor asciidoctor -v
 # note: make sure sample_build.sh can be found in /data folder
 docker run -w /data --rm -it -v$(pwd):/data robie2011/asciidoctor bash sample_build.sh
 ```
+
+## Known Issues
+
+https://github.com/prawnpdf/ttfunk/pull/41
