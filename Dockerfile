@@ -10,7 +10,7 @@ ENV MERMAIDCLI_VERSION 0.5.1
 ENV ASCIIDOCTOR_VERSION 0.1.4-3
 
 # https://rubygems.org/gems/asciidoctor-diagram/versions/1.2.1
-ENV ASCIIDOCTOR_DIAGRAM_VERSION 1.5.10
+ENV ASCIIDOCTOR_DIAGRAM_VERSION 1.5.13
 
 # https://rubygems.org/gems/asciidoctor-pdf
 ENV ASCIIDOCTOR_PDF_VERSION 1.5.0.alpha.16
