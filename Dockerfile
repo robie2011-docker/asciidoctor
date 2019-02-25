@@ -50,6 +50,8 @@ RUN  cd ~/ && export NVM_DIR="$HOME/.nvm" &&  [ -s "$NVM_DIR/nvm.sh" ] && \. "$N
      sed -i "62i puppeteerConfig.args = ['--no-sandbox'];\r\n" ~/node_modules/mermaid.cli/index.bundle.js &&\
      echo export PATH=$PATH:/home/debian/node_modules/.bin >>/home/debian/.bashrc
 
+ENV PATH="/home/debian/.nvm/versions/node/v10.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/debian/node_modules/.bin:${PATH}"
+
 # dev testing example:
 # docker build . -t tmp
 # docker run --rm -it -v/Users/robert.rajakone/repos/2017_paasos/project-doc:/data -w/data/paasos-symmetricds tmp
